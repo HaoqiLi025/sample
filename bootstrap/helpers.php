@@ -1,5 +1,4 @@
 <?php
-require __DIR__.'/helpers.php';
 
 function get_db_config()
 {
@@ -19,6 +18,6 @@ function get_db_config()
             'database' => env('DB_DATABASE','forge'),
             'username' => env('DB_USERNAME','forge'),
             'password' => env('DB_PASSWORD',''),
-        ]
+        ];
     }
 }
