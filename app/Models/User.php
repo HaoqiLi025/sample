@@ -47,4 +47,16 @@ class User extends Authenticatable
     {
         $this->notify(new ResetPassword($token));
     }
+
+    //指明一个用户拥有多条微博。
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
+
+    //将当前用户发布过的所有微博从数据库中取出
+    public function feed()
+    {
+        return $this->statuses()->orderBy('created_at','desc');
+    }
 }

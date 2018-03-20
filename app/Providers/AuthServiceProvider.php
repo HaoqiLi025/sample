@@ -15,6 +15,9 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
         \App\Models\User::class => \App\Policies\UserPolicy::class,
+
+        //配置微博删除相关授权
+        \App\Models\Status::class  => \App\Policies\StatusPolicy::class,
     ];
 
     /**
